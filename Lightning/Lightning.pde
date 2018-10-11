@@ -2,7 +2,7 @@ int startX;
 int startY;
 int endX;
 int endY;
-
+int x = 0;
 void setup()
 {
   startX = 0;
@@ -12,47 +12,28 @@ void setup()
   strokeWeight(20);
   background(0);
   size(800, 500);
-  frameRate(60);
 }
 void draw()
 {
+
   frameRate(1000);
   float R = random(255);
   float G = random(255);
   float B = random(255);
   stroke(R, G, B);
 
-  for (int i = 0; i < 10; i++) {
-    int max = 9; 
-    int min = 0; 
-    int range = max - min + 1; 
-    int rand = (int)(Math.random() * range) + min; 
-    endX = startX + rand;
-  }
-
-  for (int i = 0; i < 10; i++) { 
-    int max = 9; 
-    int min = -9; 
-    int range = max - min + 1; 
-    int rand = (int)(Math.random() * range) + min; 
-    endY = startY + rand;
-  }
-
+  endX = startX + (int)(9 * Math.random());
+  endY = startY + -9 + (int)(18 * Math.random());
   line(startX, startY, endX, endY);
   startX = endX;
   startY = endY;
 }
 void mousePressed()
 {
+  background(0);
 
-  for (int i = 0; i < 10; i++) { 
-    int max = 800; 
-    int min = 0; 
-    int range = max - min + 1; 
-    int rand = (int)(Math.random() * range) + min; 
-    startY = 0;
-  }
   startX = 0;
-  endX = 150;
+  startY = (int)(500 * Math.random());
+  endX = 0;
   endY = 150;
 }
