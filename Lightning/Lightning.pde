@@ -2,14 +2,14 @@ int startX;
 int startY;
 int endX;
 int endY;
-int x = 0;
+
 void setup()
 {
   startX = 0;
   startY = 150;
   endX = 0;
   endY = 150;
-  strokeWeight(20);
+  strokeWeight(5);
   background(0);
   size(800, 500);
 }
